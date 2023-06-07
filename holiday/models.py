@@ -46,7 +46,7 @@ class Holiday(models.Model):
     entertainment = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ['-date_of_holiday']
+        ordering = ['date_of_holiday']
 
     def __str__(self):
         return f'{self.title}'
