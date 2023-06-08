@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'django_filters',
     'profiles',
     'holiday',
+    'quick_task',
 ]
 
 MIDDLEWARE = [
