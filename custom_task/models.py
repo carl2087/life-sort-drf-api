@@ -28,7 +28,7 @@ class CustomTask(models.Model):
     ]
 
     owner = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='quick_task')
+        User, on_delete=models.CASCADE, related_name='custom_task')
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
     due_date = models.DateTimeField(
@@ -42,7 +42,7 @@ class CustomTask(models.Model):
         )]
     )
     start_date = models.DateTimeField(
-        blank=True, validators=[MinValueValidator(
+        validators=[MinValueValidator(
             timezone.now() + timezone.timedelta(
                 days=1
             ),

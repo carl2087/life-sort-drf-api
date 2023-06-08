@@ -32,12 +32,14 @@ class CustomTaskSerializer(serializers.ModelSerializer):
         now = timezone.now()
         if obj.due_date < now:
             return True
+        else:
+            return False
 
     class Meta:
         model = CustomTask
         fields = [
             'id', 'owner', 'date_created', 'date_updated', 'due_date',
-            'start_date', 'completed_state', 'priority_state', 'work_or_leisure',
-            'title', 'description', 'travel_required', 'entertainment',
-            'is_owner', 'is_overdue'
+            'start_date', 'completed_state', 'priority_state',
+            'work_or_leisure', 'title', 'description', 'travel_required',
+            'entertainment', 'is_owner', 'is_overdue'
         ]
