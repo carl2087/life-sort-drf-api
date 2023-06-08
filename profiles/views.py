@@ -21,8 +21,6 @@ class ProfileList(generics.ListAPIView):
         Makes it so only the profile that the user owns are available.
         Q object makes it so an anonymous user cannot retrieve any
         information from the list view.
-        Parameters: None
-        Return: queryset
         """
         if self.request.user.is_anonymous:
             return self.queryset.filter(Q(pk=None))

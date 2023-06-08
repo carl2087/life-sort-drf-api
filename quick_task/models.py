@@ -25,7 +25,7 @@ class QuickTask(models.Model):
         User, on_delete=models.CASCADE, related_name='quick_task')
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    due_date = models.DateField(
+    due_date = models.DateTimeField(
         blank=False, validators=[MinValueValidator(
             timezone.now() + timezone.timedelta(
                 days=1

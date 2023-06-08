@@ -37,6 +37,6 @@ class QuickTaskSerializer(serializers.ModelSerializer):
         model = QuickTask
         fields = [
             'id', 'owner', 'date_created', 'date_updated', 'due_date',
-            'completed_state', 'priority_state', 'title', 'description'
+            'completed_state', 'priority_state', 'title', 'description',
             'is_owner', 'is_overdue'
         ]

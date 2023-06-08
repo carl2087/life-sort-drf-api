@@ -1,5 +1,5 @@
 """
-Serializer for the holiday class
+Serializer for the holiday model
 """
 from django.utils import timezone
 from rest_framework import serializers
