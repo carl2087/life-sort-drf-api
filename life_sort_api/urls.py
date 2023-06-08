@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('profiles.urls')),
     path('', include('holiday.urls')),
     path('', include('quick_task.urls')),
+    path('', include('custom_task.urls')),
 ]

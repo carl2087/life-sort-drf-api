@@ -20,10 +20,10 @@ class QuickTaskList(generics.ListCreateAPIView):
     queryset = QuickTask.objects.all()
     filter_backends = [filters.SearchFilter, DjangoFilterBackend]
     filterset_fields = [
-        'due_date', 'completed_state',
+        'completed_state',
         'priority_state', 'title', 'description']
     search_fields = [
-        'due_date', 'completed_state',
+        'completed_state',
         'priority_state', 'title', 'description']
 
     def perform_create(self, serializer):

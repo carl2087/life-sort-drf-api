@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'profiles',
     'holiday',
     'quick_task',
+    'custom_task',
 ]
 
 MIDDLEWARE = [
