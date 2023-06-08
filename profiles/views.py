@@ -1,4 +1,5 @@
 from django.http import Http404
+from django.db.models import Q
 from rest_framework import status, generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -14,6 +15,21 @@ class ProfileList(generics.ListAPIView):
     """
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
+
+    def get_queryset(self):
+        """
+        Makes it so only the profile that the user owns are available.
+        Q object makes it so an anonymous user cannot retrieve any
+        information from the list view.
+
+        Parameters: None
+
+        Return: queryset
+        """
+        if self.request.user.is_anonymous:
+            return self.queryset.filter(Q(pk=None))
+        else:
+            return self.queryset.filter(owner=self.request.user)
 
 
 class ProfileDetail(generics.RetrieveUpdateAPIView):

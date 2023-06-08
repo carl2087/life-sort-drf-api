@@ -24,12 +24,10 @@ class HolidayList(generics.ListCreateAPIView):
 
     def get_queryset(self):
         """
-        Makes it so only the Events that the user owns are available.
+        Makes it so only the holiday tasks that the user owns are available.
         Q object makes it so an anonymous user cannot retrieve any
         information from the list view.
-
         Parameters: None
-
         Return: queryset
         """
         if self.request.user.is_anonymous:
