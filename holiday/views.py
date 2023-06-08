@@ -23,6 +23,9 @@ class HolidayList(generics.ListCreateAPIView):
     search_fields = ['title', 'description', 'completed_state']
 
     def perform_create(self, serializer):
+        """
+        saves a new holiday task to the database
+        """
         serializer.save(owner=self.request.user)
 
     def get_queryset(self):
@@ -38,8 +41,23 @@ class HolidayList(generics.ListCreateAPIView):
 
 
 class HolidayDetailView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Displays a specific holiday task to the user if they are
+    logged in and the owner of the task
+    """
     permission_classes = [
         IsOwnerOrReadOnly
     ]
     serializer_class = HolidaySerializer
     queryset = Holiday.objects.all()
+
+    def get_queryset(self):
+        """
+        Makes it so only the holiday tasks that the user owns are available.
+        Q object makes it so an anonymous user cannot retrieve any
+        information from the detail view.
+        """
+        if self.request.user.is_anonymous:
+            return self.queryset.filter(Q(pk=None))
+        else:
+            return self.queryset.filter(owner=self.request.user)
