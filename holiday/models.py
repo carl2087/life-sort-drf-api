@@ -14,6 +14,7 @@ class Holiday(models.Model):
         ('In progress', 'In progress'),
         ('Completed', 'Completed')
     ]
+
     owner = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='holiday')
     date_created = models.DateTimeField(auto_now_add=True)
@@ -30,7 +31,7 @@ class Holiday(models.Model):
     )
     completed_state = models.CharField(
         max_length=30, choices=COMPLETED_STATE_CHOICES,
-        default='In progress'
+        default='In progress',
     )
     title = models.CharField(max_length=200)
     description = models.TextField(blank=True)
