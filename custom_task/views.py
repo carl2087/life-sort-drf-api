@@ -42,3 +42,26 @@ class CustomTaskList(generics.ListCreateAPIView):
             return self.queryset.filter(Q(pk=None))
         else:
             return self.queryset.filter(owner=self.request.user)
+
+
+class CustomTaskListDetailView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Displays a specific custom task to the user if
+    they are logged in and the owner of the task
+    """
+    permission_classes = [
+        IsOwnerOrReadOnly
+    ]
+    serializer_class = CustomTaskSerializer
+    queryset = CustomTask.objects.all()
+
+    def get_queryset(self):
+        """
+        Makes it so only the custom tasks that the user owns are available.
+        Q object makes it so an anonymous user cannot retrieve any
+        information from the list view.
+        """
+        if self.request.user.is_anonymous:
+            return self.queryset.filter(Q(pk=None))
+        else:
+            return self.queryset.filter(owner=self.request.user)
