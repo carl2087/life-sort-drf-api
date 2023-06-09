@@ -35,3 +35,14 @@ class ProfileDetail(generics.RetrieveUpdateAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
+
+    def get_queryset(self):
+        """
+        Makes it so only the profile that the user owns are available.
+        Q object makes it so an anonymous user cannot retrieve any
+        information from the list view.
+        """
+        if self.request.user.is_anonymous:
+            return self.queryset.filter(Q(pk=None))
+        else:
+            return self.queryset.filter(owner=self.request.user)
