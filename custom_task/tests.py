@@ -153,3 +153,14 @@ class CustomTaskDetailViewTests(APITestCase):
                                'due_date': '2023-07-01 12:00', 'start_date':
                                '2023-07-01 12:00', 'budget': '-10'})
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+
+class TestModel(APITestCase):
+    def test_model_string_method_return_title(self):
+        User.objects.create_user(username='carltest', password='testcarl')
+        carltest = User.objects.get(username='carltest')
+        response = CustomTask.objects.create(
+            title='test', due_date='2023-07-01T13:20:30+03:00',
+            start_date='2023-07-01T13:20:30+03:00',
+            owner=carltest)
+        self.assertEqual(str(response), 'test')

@@ -76,3 +76,11 @@ class TestProfileListDetailView(APITestCase):
     def test_cannot_retrieve_invalid_id(self):
         response = self.client.get('/profiles/999/')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+
+class TestModel(APITestCase):
+    def test_model_string_method_return_title(self):
+        User.objects.create_user(username='carltest', password='testcarl')
+        carltest = User.objects.get(username='carltest')
+        response = Profile.objects.get(owner=carltest)
+        self.assertEqual(str(response), "carltest's profile")
