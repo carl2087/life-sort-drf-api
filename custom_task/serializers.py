@@ -41,5 +41,5 @@ class CustomTaskSerializer(serializers.ModelSerializer):
             'id', 'owner', 'date_created', 'date_updated', 'due_date',
             'start_date', 'completed_state', 'priority_state',
             'work_or_leisure', 'title', 'description', 'travel_required',
-            'entertainment', 'is_owner', 'is_overdue'
+            'entertainment', 'is_owner', 'is_overdue', 'budget'
         ]

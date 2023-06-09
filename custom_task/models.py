@@ -45,11 +45,11 @@ class CustomTask(models.Model):
         validators=[MinValueValidator(
             timezone.now() + timezone.timedelta(
                 days=1
-            ),
+            )),
             MaxValueValidator(timezone.now() + timezone.timedelta(
                 days=1000
             ))
-        )]
+        ]
     )
     completed_state = models.CharField(
         max_length=30, choices=COMPLETED_STATE_CHOICES,
@@ -69,3 +69,9 @@ class CustomTask(models.Model):
         blank=False, default=0, validators=[MinValueValidator(0)])
     travel_required = models.BooleanField(default=False)
     entertainment = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['start_date']
+
+    def __str__(self):
+        return f'{self.title}'
