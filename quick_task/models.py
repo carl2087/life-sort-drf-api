@@ -29,11 +29,11 @@ class QuickTask(models.Model):
         blank=False, validators=[MinValueValidator(
             timezone.now() + timezone.timedelta(
                 days=1
-            ),
+            )),
             MaxValueValidator(timezone.now() + timezone.timedelta(
                 days=1000
             ))
-        )]
+        ]
     )
     completed_state = models.CharField(
         max_length=30, choices=COMPLETED_STATE_CHOICES,

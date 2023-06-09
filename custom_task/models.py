@@ -35,11 +35,11 @@ class CustomTask(models.Model):
         blank=False, validators=[MinValueValidator(
             timezone.now() + timezone.timedelta(
                 days=1
-            ),
+            )),
             MaxValueValidator(timezone.now() + timezone.timedelta(
                 days=1000
             ))
-        )]
+        ]
     )
     start_date = models.DateTimeField(
         validators=[MinValueValidator(
