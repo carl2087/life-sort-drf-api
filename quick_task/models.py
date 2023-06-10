@@ -1,7 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils import timezone
-from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class QuickTask(models.Model):
@@ -25,16 +23,7 @@ class QuickTask(models.Model):
         User, on_delete=models.CASCADE, related_name='quick_task')
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    due_date = models.DateTimeField(
-        blank=False, validators=[MinValueValidator(
-            timezone.now() + timezone.timedelta(
-                days=1
-            )),
-            MaxValueValidator(timezone.now() + timezone.timedelta(
-                days=1000
-            ))
-        ]
-    )
+    due_date = models.DateTimeField()
     completed_state = models.CharField(
         max_length=30, choices=COMPLETED_STATE_CHOICES,
         default='In Progress'

@@ -17,6 +17,22 @@ class QuickTaskSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     is_overdue = serializers.SerializerMethodField()
+    due_date = serializers.DateTimeField()
+
+    def validate(self, data):
+        """
+        Validates the date set on due date ensuring it is
+        in the future and not more than 1000 days in future
+        """
+        if data['due_date'] < timezone.now() + timezone.timedelta(
+                days=1):
+            raise serializers.ValidationError(
+                "Due date must be at least 24 hours in future")
+        elif data['due_date'] > timezone.now() + timezone.timedelta(
+                days=1000):
+            raise serializers.ValidationError(
+                "Due date cannot be more than 1000 days in future")
+        return data
 
     def get_is_owner(self, obj):
         """

@@ -4,7 +4,6 @@ Serializer for the custom task model
 from django.utils import timezone
 from rest_framework import serializers
 from .models import CustomTask
-from django.utils import timezone
 
 
 class CustomTaskSerializer(serializers.ModelSerializer):
