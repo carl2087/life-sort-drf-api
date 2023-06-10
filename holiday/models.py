@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils import timezone
-from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.validators import MinValueValidator
 
 
 class Holiday(models.Model):
@@ -19,16 +18,7 @@ class Holiday(models.Model):
         User, on_delete=models.CASCADE, related_name='holiday')
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    date_of_holiday = models.DateTimeField(
-        blank=False, validators=[MinValueValidator(
-            timezone.now() + timezone.timedelta(
-                days=1
-            )),
-            MaxValueValidator(timezone.now() + timezone.timedelta(
-                days=1000
-            ))
-        ]
-    )
+    date_of_holiday = models.DateTimeField()
     completed_state = models.CharField(
         max_length=30, choices=COMPLETED_STATE_CHOICES,
         default='In progress',

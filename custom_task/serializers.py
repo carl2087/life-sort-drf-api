@@ -23,7 +23,7 @@ class CustomTaskSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
         """
-        Validates the dates entered ensuring that they are in future and 
+        Validates the dates entered ensuring that they are in future and
         start date cannot be set before due date
         """
         if data['due_date'] < timezone.now() + timezone.timedelta(
