@@ -31,26 +31,8 @@ class CustomTask(models.Model):
         User, on_delete=models.CASCADE, related_name='custom_task')
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
-    due_date = models.DateTimeField(
-        blank=False, validators=[MinValueValidator(
-            timezone.now() + timezone.timedelta(
-                days=1
-            )),
-            MaxValueValidator(timezone.now() + timezone.timedelta(
-                days=1000
-            ))
-        ]
-    )
-    start_date = models.DateTimeField(
-        validators=[MinValueValidator(
-            timezone.now() + timezone.timedelta(
-                days=1
-            )),
-            MaxValueValidator(timezone.now() + timezone.timedelta(
-                days=1000
-            ))
-        ]
-    )
+    due_date = models.DateTimeField()
+    start_date = models.DateTimeField()
     completed_state = models.CharField(
         max_length=30, choices=COMPLETED_STATE_CHOICES,
         default='In Progress'

@@ -81,14 +81,14 @@ class QuickTaskDetailViewTests(APITestCase):
         response = self.client.get('/holiday/1/')
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
 
-    def test_custom_task_owner_can_edit_own_task(self):
+    def test_quick_task_owner_can_edit_own_task(self):
         self.client.login(username='carltest', password='testcarl')
         response = self.client.put(
             '/quicktask/1/', {'title': 'a new title',
                               'due_date': '2023-07-01 12:00'})
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_custom_task_owner_cannot_edit_other_user_task(self):
+    def test_quick_task_owner_cannot_edit_other_user_task(self):
         self.client.login(username='junotest', password='testjuno')
         response_one = self.client.post(
             '/quicktask/', {'title': 'a new title',

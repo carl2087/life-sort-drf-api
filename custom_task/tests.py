@@ -84,6 +84,14 @@ class CustomTaskDetailViewTests(APITestCase):
         response = self.client.get('/customtask/1/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
+    def test_custom_task_cannot_have_due_date_after_start_date(self):
+        self.client.login(username='carltest', password='testcarl')
+        response = self.client.put(
+            '/customtask/1/', {'title': 'a title',
+                               'due_date': '2023-07-01 12:00', 'start_date':
+                               '2023-08-01 12:00'})
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
     def test_cannot_retrieve_invalid_id(self):
         self.client.login(username='carltest', password='testcarl')
         response = self.client.get('customtask/999/')
@@ -128,6 +136,14 @@ class CustomTaskDetailViewTests(APITestCase):
             '/customtask/1/', {'title': 'a title',
                                'due_date': '2023-01-01 12:00', 'start_date':
                                '2023-01-01 12:00'})
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_custom_task_edit_cannot_have_due_date_after_start_date(self):
+        self.client.login(username='carltest', password='testcarl')
+        response = self.client.put(
+            '/customtask/1/', {'title': 'a title',
+                               'due_date': '2023-07-01 12:00', 'start_date':
+                               '2023-08-01 12:00'})
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_custom_task_edit_has_valid_max_date(self):

@@ -16,6 +16,13 @@ class HolidaySerializer(serializers.ModelSerializer):
     id = serializers.ReadOnlyField()
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
+    date_of_holiday = serializers.DateTimeField()
+
+    def validate(self, data):
+        """
+        Validates the date set on date of holiday ensuring it is 
+        in the future and not more than 1000 days in future
+        """
 
     def get_is_owner(self, obj):
         request = self.context['request']

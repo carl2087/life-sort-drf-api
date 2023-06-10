@@ -4,6 +4,7 @@ Serializer for the custom task model
 from django.utils import timezone
 from rest_framework import serializers
 from .models import CustomTask
+from django.utils import timezone
 
 
 class CustomTaskSerializer(serializers.ModelSerializer):
@@ -17,6 +18,36 @@ class CustomTaskSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
     is_overdue = serializers.SerializerMethodField()
+    due_date = serializers.DateTimeField()
+    start_date = serializers.DateTimeField()
+
+    def validate(self, data):
+        """
+        Validates the dates entered ensuring that they are in future and 
+        start date cannot be set before due date
+        """
+        if data['due_date'] < timezone.now() + timezone.timedelta(
+                days=1):
+            raise serializers.ValidationError(
+                "Due date must be at least 24 hours in future")
+        elif data['due_date'] > timezone.now() + timezone.timedelta(
+                days=1000):
+            raise serializers.ValidationError(
+                "Due date cannot be more than 1000 days in future")
+        elif data['start_date'] < timezone.now() + timezone.timedelta(
+                days=1):
+            raise serializers.ValidationError(
+                    "Start date must be at least 24 hours in future"
+                )
+        elif data['start_date'] > timezone.now() + timezone.timedelta(
+                days=1000):
+            raise serializers.ValidationError(
+                    "Start date cannot be more than 1000 days in future"
+                )
+        elif data['due_date'] < data['start_date']:
+            raise serializers.ValidationError(
+                "Due date must be after start date.")
+        return data
 
     def get_is_owner(self, obj):
         """
