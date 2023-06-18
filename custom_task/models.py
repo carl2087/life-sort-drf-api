@@ -42,7 +42,7 @@ class CustomTask(models.Model):
     )
     work_or_leisure = models.CharField(
         max_length=30, choices=WORK_OR_LEISURE_CHOICES,
-        default='leisure',
+        default='Leisure',
     )
     description = models.TextField(blank=True)
     title = models.CharField(max_length=200)
