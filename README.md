@@ -123,5 +123,20 @@ I thoroughly tested Lifesort API with both manual testing and automated testing 
 
 ### Manual testing
 
-The manual testing I completed can be found here: [Manaul Testing](MANUAL_TESTS.md). It describes the steps I went thorugh to manually ensure the API is working correctly. 
+The manual testing I completed can be found here: [Manual Testing](MANUAL_TESTS.md). It describes the steps I went thorugh to manually ensure the API is working correctly.
 
+I also ran the code I wrote through the [Code Institute linter](https://pep8ci.herokuapp.com/) to ensure the code I wrote was free from errors.
+
+![Python linter test result](static/images-testing/python-linter-result.png)
+
+### Automated testing
+
+I also wrote a series of automated testing suites in order to further test and uncover any hidden bugs that may not have been discovered with the manual test. The autmated testing also further reinforces the manual tests.
+
+Here is the results from the testing within the terminal.
+
+![Test results from terminal](static/images-testing/test-results-terminal-api.png)
+
+I also installed and used [Coverage python testing](https://coverage.readthedocs.io/en/7.2.7/) to ensure I was testing as much of my code as possible.
+
+![Coverage test results](static/images-testing/coverage-report-api.png)
