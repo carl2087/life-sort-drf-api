@@ -140,3 +140,39 @@ Here is the results from the testing within the terminal.
 I also installed and used [Coverage python testing](https://coverage.readthedocs.io/en/7.2.7/) to ensure I was testing as much of my code as possible.
 
 ![Coverage test results](static/images-testing/coverage-report-api.png)
+
+## Resolved Bugs
+
+Any bugs that were found during testing are documented in the user stories bug section. 
+
+### When testing the API bugs found where as follows
+
+#### Receiving a warning in terminal regarding unordered lists
+
+ * I checked all models.
+ * Custom task model did not contain a class meta.
+ * Added in the class meta.
+ * Ran all migrations.
+ * Checked tests were now passing.
+
+#### During testing was able to create a minus budget for custom tasks
+
+ * Checked models were correct.
+ * Checked custom task serializer.
+ * Added budget into serializer.
+ * Ran migrations.
+ * Checked tests were passing.
+
+#### During manual testing discovered could set due date before start date in custom task model
+
+ * Researched how to validate dates correctly I referenced this [Dev Diary](https://www.flaviabastos.cadjango-rest-framework-adding-datetimefield-format-serializer-validation/).
+ * Removed the validation from the model to the serializer.
+ * Checked tests were passing.
+ * Updated all models to have the date validation in the serializer.
+
+#### During final deploy to Heroku kept on receiving error messages
+
+ * Checked the heroku build log.
+ * Check all config vars were correct.
+ * Checked Procfile was correct.
+ * Found error in Procfile it was not configured correctly. I updated the code and deployed the APi tested it and it was working as intended.
