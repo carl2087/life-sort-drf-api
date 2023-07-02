@@ -19,7 +19,7 @@ class HolidayList(generics.ListCreateAPIView):
     ]
     queryset = Holiday.objects.all()
     filter_backends = [filters.SearchFilter, DjangoFilterBackend]
-    filterset_fields = ['title', 'description',]
+    filterset_fields = ['title', 'description']
     search_fields = ['title', 'description', 'completed_state']
 
     def perform_create(self, serializer):
