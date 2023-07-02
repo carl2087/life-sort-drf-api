@@ -8,7 +8,7 @@ All users of the site should be able to create, read, update and delete tasks an
 
 ## Django installed correctly
 
-I manually tested early and throughout the process of building the Lifesort API. That started with ensuring Django had installed correctly.
+### I manually tested early and throughout the process of building the Lifesort API. That started with ensuring Django had installed correctly.
 
 - [x] Test Django had installed correctly
 
@@ -16,7 +16,7 @@ I manually tested early and throughout the process of building the Lifesort API.
 
 ## Root route view
 
-The root route exists to show a welcome message to a user who visits the API and shows the API is working.
+### The root route exists to show a welcome message to a user who visits the API and shows the API is working.
 
 - [x] Test when a user visits the API they are shown a welcome message.
 
@@ -28,7 +28,7 @@ The root route exists to show a welcome message to a user who visits the API and
 
 ## Profile views
 
-I tested the profile views to ensure that users can only see their own profile and edit their own profile as well there is no delete option for the profile view.
+### I tested the profile views to ensure that users can only see their own profile and edit their own profile as well there is no delete option for the profile view.
 
 - [x] Test a user cannot see a profile if they are not logged in.
 
@@ -46,9 +46,50 @@ I tested the profile views to ensure that users can only see their own profile a
 
 ![Editing own profile](static/images-testing/profile/edit-profile.png)
 
+## Custom task views
+
+### I tested the custom task views to ensure users can only access their own tasks are have full CRUD control as well.
+
+- [x] Users can create a custom task.
+
+![Create a custom task](static/images-testing/custom-task/create-custom-task.png)
+
+- [x] Logged in user can access custom task detail view.
+
+![Access custom task detail view](static/images-testing/custom-task/logged-in-custom-task-owner.png)
+
+- [x] Users can edit custom task.
+
+![Edit custom task](static/images-testing/custom-task/custom-task-edit.png)
+
+- [x] Users can delete custom task.
+
+![Delete custom task](static/images-testing/custom-task/delete-custom-task.png)
+
+- [x] Users cannot create a custom task with due date set before start date.
+
+![Custom task with due date before start date](static/images-testing/custom-task/custom-task-due-date-after-start-date.png)
+
+- [x] Users cannot create a task with dates set more than 1000 days in future.
+
+![Custom task created more than 1000 days in future](static/images-testing/custom-task/custom-task-due-date-less-than-1000-in-future.png)
+
+- [x] Logged in user can access custom task list view.
+
+![Logged in user custom task list view](static/images-testing/custom-task/logged-in-custom-task-list.png)
+
+- [x] Logged in user cannot access another users task.
+
+![Logged in user trying to access another users task](static/images-testing/custom-task/logged-out-other-user-custom-task.png)
+
+- [x] Logged out user cannot access custom tasks.
+
+![Logged out user accessing custom tasks](static/images-testing/custom-task/log-out-user-custom-task-list.png)
+
+
 ## Quick task views
 
-I tested the quick task views to ensure users can only access their own tasks are have full CRUD control as well.
+### I tested the quick task views to ensure users can only access their own tasks are have full CRUD control as well.
 
 - [x] Users can create a quick task.
 
