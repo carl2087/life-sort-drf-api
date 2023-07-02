@@ -127,3 +127,45 @@ All users of the site should be able to create, read, update and delete tasks an
 
 ![Logged out user trying to access quick task list](static/images-testing/quick-task/quick-task-list-logged-out.png)
 
+
+## Holiday task views
+
+### I tested the holiday task views to ensure users can only access their own tasks are have full CRUD control as well.
+
+- [x] User can create a holiday task.
+
+![Create a holiday task](static/images-testing/holiday-task/create-holiday-task.png)
+
+- [x] Users can edit a holiday task.
+
+![Edit a holiday task](static/images-testing/holiday-task/edit-holiday-task.png)
+
+- [x] User can delete a holiday task
+
+![Delete a holilday task](static/images-testing/holiday-task/delete-holiday-task.png)
+
+- [x] Cannot create a holiday task more than 1000 days in future.
+
+![Cannot create holiday task more than 1000 days in future](static/images-testing/holiday-task/create-holiday-task-100-days-in-future.png)
+
+- [x] Cannot create holiday task in past.
+
+![Cannot create holiday task in past](static/images-testing/holiday-task/create-holiday-task-in-past.png)
+
+
+- [x] Logged in users cannot access another users holiday task.
+
+![Logged in user accessing another users holiday task](static/images-testing/holiday-task/holiday-detail-other-user-task.png)
+
+- [x] Logged in user can access their own holiday task.
+
+![User accessing their own holiday task](static/images-testing/holiday-task/holiday-detail-task-owner.png)
+
+- [x] Logged in user can access their holiday task list.
+
+![Users holiday task list](static/images-testing/holiday-task/holiday-list-logged-in.png)
+
+- [x] Logged out user cannot access holiday task list.
+
+![Logged out user holiday task list](static/images-testing/holiday-task/holiday-list-logged-out.png)
+
