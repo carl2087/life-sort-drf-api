@@ -26,7 +26,7 @@ Lifesort has a separate front-end built with React and a back-end built with the
 
 Planning for the application was based on an agile methodology utilising GitHubs issues and projects tabs to create user stories for the site. There are user stories which are for the project goals of the site and what I wanted to achieve and I set up project tasks as well which incorporate the what is required for each step of the project.
 
-The user stories requiring implementation to achieve a minimimum viable product where then mapped to API endpoints to required to support the desired functionality. 
+The user stories requiring implementation to achieve a minimum viable product where then mapped to API endpoints to required to support the desired functionality. 
 
 [Lifesort Kanban board](https://github.com/users/carl2087/projects/10)
 
@@ -36,7 +36,7 @@ The user stories requiring implementation to achieve a minimimum viable product 
 
 ## Database Schema
 
-The database schemas were planned with th APi endpoints using an entity realtionship diagram.
+The database schemas were planned with the API endpoints using an entity relationship diagram.
 
 ![Lifesort database schema](static/images-database/entity-diagram-life-sort.png)
 
@@ -50,7 +50,7 @@ The profile model contains the following fields:
  * owner - One to one relationship with a specific user instance.
  * date created - Date and time for the creation of the profile.
  * date updated - Date and time when the profile was last updated.
- * image - Image that is displayed witin the users profile.
+ * image - Image that is displayed within the users profile.
 
 ![Profile model schema](static/images-database/profile-schema.png)
 
@@ -58,7 +58,7 @@ The profile model contains the following fields:
 
 The custom task model is designed to allow the user to set a more detailed task that has multiple options and plan for a bigger event task in the future.
 
-The custom task model containds the following fields:
+The custom task model contains the following fields:
 
  * owner - Primary key of the user who generated the task.
  * date created - Date and time for the creation of the task.
@@ -79,7 +79,7 @@ The custom task model containds the following fields:
 
 The quick task model is designed to let a user create a short quick task.
 
-The quick tast model contains the following fields:
+The quick task model contains the following fields:
 
  * owner - Primary key of the user who generated the task.
  * date created - Date and time for the creation of the task.
@@ -94,7 +94,7 @@ The quick tast model contains the following fields:
 
 ### Holiday task model
 
-The holiday task model is designed to let a user create and plan for a holiday with various holiday focused options to make planning for a holiday less stressful. The holiday task model would work better in a mobile app setting as items could be ticked off quicker and this was the main focus of this model for a future verison of the application.
+The holiday task model is designed to let a user create and plan for a holiday with various holiday focused options to make planning for a holiday less stressful. The holiday task model would work better in a mobile app setting as items could be ticked off quicker and this was the main focus of this model for a future version of the application.
 
 The holiday task model contains the following fields.
 
@@ -108,8 +108,8 @@ The holiday task model contains the following fields.
  * budget - Cost of holiday.
  * clothes - If any clothes are required for holiday.
  * passport - If passport is required.
- * holiday insurance - If any insurancees are required.
- * suitcases packed - Suicases fully packed.
+ * holiday insurance - If any insurances are required.
+ * suitcases packed - Suitcases fully packed.
  * holiday paid - Holiday paid in full yet.
  * car hire - If car hire is needed.
  * tickets - If any tickets are required.
@@ -123,7 +123,7 @@ I thoroughly tested Lifesort API with both manual testing and automated testing 
 
 ### Manual testing
 
-The manual testing I completed can be found here: [Manual Testing](MANUAL_TESTS.md). It describes the steps I went thorugh to manually ensure the API is working correctly.
+The manual testing I completed can be found here: [Manual Testing](MANUAL_TESTS.md). It describes the steps I went thorough to manually ensure the API is working correctly.
 
 I also ran the code I wrote through the [Code Institute linter](https://pep8ci.herokuapp.com/) to ensure the code I wrote was free from errors.
 
@@ -131,7 +131,7 @@ I also ran the code I wrote through the [Code Institute linter](https://pep8ci.h
 
 ### Automated testing
 
-I also wrote a series of automated testing suites in order to further test and uncover any hidden bugs that may not have been discovered with the manual test. The autmated testing also further reinforces the manual tests.
+I also wrote a series of automated testing suites in order to further test and uncover any hidden bugs that may not have been discovered with the manual test. The automated testing also further reinforces the manual tests.
 
 Here is the results from the testing within the terminal.
 
@@ -175,7 +175,7 @@ Any bugs that were found during testing are documented in the user stories bug s
  * Checked the heroku build log.
  * Check all config vars were correct.
  * Checked Procfile was correct.
- * Found error in Procfile it was not configured correctly. I updated the code and deployed the APi tested it and it was working as intended.
+ * Found error in Procfile it was not configured correctly. I updated the code and deployed the API tested it and it was working as intended.
 
 ## Unresolved bugs
 
@@ -196,7 +196,7 @@ To the best of my knowledge there are no further bugs left in the API code.
  * Cloudinary
  * Heroku
  * Pillow
- * PostgeSQL
+ * PostgreSQL
  * CORS Headers
  * Microsoft Excel - used to create database schema
  * Gitpod
