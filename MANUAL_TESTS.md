@@ -45,3 +45,44 @@ I tested the profile views to ensure that users can only see their own profile a
 - [x] Test a user can edit their own profile when logged in.
 
 ![Editing own profile](static/images-testing/profile/edit-profile.png)
+
+## Quick task views
+
+I tested the quick task views to ensure users can only access their own tasks are have full CRUD control as well.
+
+- [x] Users can create a quick task.
+
+![Creating a quick task](static/images-testing/quick-task/create-quick-task.png)
+
+- [x] Users can access their own quick task.
+
+![Quick task detail view](static/images-testing/quick-task/quick-task-detail-view.png)
+
+- [x] Users can edit a quick task.
+
+![Quick task edit view](static/images-testing/quick-task/edit-quick-task.png)
+
+- [x] Users can delete a quick task.
+
+![Quick task deletion view](static/images-testing/quick-task/delete-quick-task.png)
+
+- [x] Users cannot create a quick task woth a due date more than 1000 days in future.
+
+![Create a quick task with a due date more than 1000 days in future](static/images-testing/quick-task/quick-task-in-1000-days-in-future.png)
+
+- [x] Users cannot create a quick task with a due date in the past.
+
+![Create a quick task with due date in past](static/images-testing/quick-task/quick-task-in-past.png)
+
+- [x] Users cannot access another users quick task.
+
+![User attempting to access another users task](static/images-testing/quick-task/other-users-quick-task.png)
+
+- [x] logged in user can access their own quick task list.
+
+![Logged in user viewing their own quick task list view](static/images-testing/quick-task/quick-task-list-logged-in.png)
+
+- [x] logged out user cannot access quick task list.
+
+![Logged out user trying to access quick task list](static/images-testing/quick-task/quick-task-list-logged-out.png)
+
