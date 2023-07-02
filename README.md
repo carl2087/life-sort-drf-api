@@ -192,12 +192,15 @@ To the best of my knowledge there are no further bugs left in the API code.
  * Django
  * Django Rest Framework
  * Django Rest Auth
+ * Django Allauth
  * Cloudinary
  * Heroku
  * Pillow
  * PostgeSQL
  * CORS Headers
  * Microsoft Excel - used to create database schema
+ * Gitpod
+ * GitHub
 
 
 ## Deployment
@@ -238,3 +241,11 @@ To duplicate deployment to Heroku, follow these steps:
  * Optionally choose the main branch under 'Automatic Deploys' and select 'Enable Automatic Deploys' if you wish your deployed API to be automatically redeployed every time you push changes to GitHub.
  * Find the 'Manual Deploy' section, choose 'main' as the branch to deploy and select 'Deploy Branch'.
  * Your API will shortly be deployed and you will be given a link to the deployed site when the process is complete.
+
+## Credits and acknowledgements
+
+ * Code Institute Rest Framework walkthrough which helped when building this API.
+ * Django Rest Framework documentation which helped me understanding some of the concepts.
+ * Validating the dates in the serializer came from this [Dev Diary](https://www.flaviabastos.cadjango-rest-framework-adding-datetimefield-format-serializer-validation/).
+
+I would like to extend a thank you to my mentor Martina Terlevic whose advice cannot be underestimated. Also to my previous mentor Victor Miclovich who has given helped throughout my other projects.
