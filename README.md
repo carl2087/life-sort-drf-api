@@ -22,6 +22,33 @@ Lifesort has a separate front-end built with React and a back-end built with the
 ### Deployed front-end site [Lifesort front-end live site](https://life-sort.herokuapp.com/)
 ### Front-end repository [Lifesort front-end repository](https://github.com/carl2087/life-sort-task-app)
 
+## Table of contents:  
+
+  * [Planning](#planning)
+  * [Database Schema](#database-schema)
+    + [Profile model](#profile-model)
+    + [Custom task model](#custom-task-model)
+    + [Quick task model](#quick-task-model)
+    + [Holiday task model](#holiday-task-model)
+  * [Testing](#testing)
+    + [Manual testing](#manual-testing)
+    + [Automated testing](#automated-testing)
+  * [Resolved Bugs](#resolved-bugs)
+    + [When testing the API bugs found where as follows](#when-testing-the-api-bugs-found-where-as-follows)
+      - [Receiving a warning in terminal regarding unordered lists](#receiving-a-warning-in-terminal-regarding-unordered-lists)
+      - [During testing was able to create a minus budget for custom tasks](#during-testing-was-able-to-create-a-minus-budget-for-custom-tasks)
+      - [During manual testing discovered could set due date before start date in custom task model](#during-manual-testing-discovered-could-set-due-date-before-start-date-in-custom-task-model)
+      - [During final deploy to Heroku kept on receiving error messages](#during-final-deploy-to-heroku-kept-on-receiving-error-messages)
+  * [Unresolved bugs](#unresolved-bugs)
+  * [Technologies used](#technologies-used)
+    + [Main languages used](#main-languages-used)
+    + [Frameworks, Libraries & Programs used:](#frameworks--libraries---programs-used-)
+  * [Deployment](#deployment)
+  * [Credits and acknowledgements](#credits-and-acknowledgements)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 ## Planning
 
 Planning for the application was based on an agile methodology utilising GitHubs issues and projects tabs to create user stories for the site. There are user stories which are for the project goals of the site and what I wanted to achieve and I set up project tasks as well which incorporate the what is required for each step of the project.
@@ -33,6 +60,8 @@ The user stories requiring implementation to achieve a minimum viable product wh
 [Lifesort project tasks](https://github.com/users/carl2087/projects/11)
 
 [Lifesort user stories](https://github.com/carl2087/life-sort-task-app/issues)
+
+[Back to top](#table-of-contents)
 
 ## Database Schema
 
@@ -117,6 +146,8 @@ The holiday task model contains the following fields.
 
 ![Holiday task model schema](static/images-database/holiday-model-schema.png)
 
+[Back to top](#table-of-contents)
+
 ## Testing
 
 I thoroughly tested Lifesort API with both manual testing and automated testing to ensure the application was working as designed and expected.
@@ -140,6 +171,8 @@ Here is the results from the testing within the terminal.
 I also installed and used [Coverage python testing](https://coverage.readthedocs.io/en/7.2.7/) to ensure I was testing as much of my code as possible.
 
 ![Coverage test results](static/images-testing/coverage-report-api.png)
+
+[Back to top](#table-of-contents)
 
 ## Resolved Bugs
 
@@ -181,6 +214,8 @@ Any bugs that were found during testing are documented in the user stories bug s
 
 To the best of my knowledge there are no further bugs left in the API code.
 
+[Back to top](#table-of-contents)
+
 ## Technologies used
 
 ### Main languages used
@@ -202,6 +237,8 @@ To the best of my knowledge there are no further bugs left in the API code.
  * Gitpod
  * GitHub
 
+
+[Back to top](#table-of-contents)
 
 ## Deployment
 
@@ -249,3 +286,5 @@ To duplicate deployment to Heroku, follow these steps:
  * Validating the dates in the serializer came from this [Dev Diary](https://www.flaviabastos.cadjango-rest-framework-adding-datetimefield-format-serializer-validation/).
 
 I would like to extend a thank you to my mentor Martina Terlevic whose advice cannot be underestimated. Also to my previous mentor Victor Miclovich who has given helped throughout my other projects.
+
+[Back to top](#table-of-contents)
