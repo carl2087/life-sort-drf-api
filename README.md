@@ -14,6 +14,8 @@ Users of the site also have access to their own profile page and have the abilit
 
 Lifesort was designed with the focus on an application that can be used on desktop computers but also on mobile devices as well.
 
+Due to the nature of the application I designed the tasks within the application to only be accessed by the task owner and this goes same for the profile model.
+
 Lifesort has a separate front-end built with React and a back-end built with the Django-Rest-Framework. Both of the front-end and back-end have been deployed on [Heroku](https://www.heroku.com/) This README is for the back-end API section of the application.
 
 ### Deployed back-end API [Lifesort back-end API live site](https://life-sort-api.herokuapp.com/)
@@ -114,4 +116,12 @@ The holiday task model contains the following fields.
  * entertainment - If there is any entertainment needs.
 
 ![Holiday task model schema](static/images-database/holiday-model-schema.png)
+
+## Testing
+
+I thoroughly tested Lifesort API with both manual testing and automated testing to ensure the application was working as designed and expected.
+
+### Manual testing
+
+The manual testing I completed can be found here: [Manaul Testing](MANUAL_TESTS.md). It describes the steps I went thorugh to manually ensure the API is working correctly. 
 
